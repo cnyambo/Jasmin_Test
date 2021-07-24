@@ -58,6 +58,7 @@ body {
     color: white;
     max-width: 300px;
     min-width: 230px;
+    cursor: pointer;
     border: 3px solid black
   }
   
