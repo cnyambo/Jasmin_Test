@@ -34,11 +34,23 @@ function updateServerTable() {
     let newTr = document.createElement('tr');
     newTr.setAttribute('id', key);
 
+    let newBtn = document.createElement('button');
+    newBtn.innerText = 'X';
+    let td = document.createElement('td');
+    
     let tipAverage = sumPaymentTotal('tipAmt') / Object.keys(allServers).length;
 
     appendTd(newTr, curServer.serverName);
     appendTd(newTr, '$' + tipAverage.toFixed(2));
 
     serverTbody.append(newTr);
+    newTr.appendChild(td);
+
+    td.appendChild(newBtn);
+    newTr.addEventListener('click',function(e) {
+      appendDeleteBtn(e.target);
+      
+      
+    });
   }
 }

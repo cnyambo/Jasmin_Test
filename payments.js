@@ -15,7 +15,7 @@ function submitPaymentInfo(evt) {
   if (evt) evt.preventDefault(); // when running tests there is no event
 
   let curPayment = createCurPayment();
-
+   
   if (curPayment) {
     paymentId += 1;
 
@@ -70,9 +70,35 @@ function updateSummary() {
   } else {
     tipPercentAvg = paymentTotal / Object.keys(allPayments).length;
   }
-
+  
   summaryTds[0].innerHTML = '$' + sumPaymentTotal('billAmt');
   summaryTds[1].innerHTML = '$' + sumPaymentTotal('tipAmt');
   summaryTds[2].innerHTML =  Math.round(tipPercentAvg) + '%';
 }
 
+//
+
+/*function calculateTipPercent(bill,tip)
+{
+    return Math.round(tip*100/bill);
+}
+
+function appendTd(newTr, val)
+{
+    const td = document.createElement('td');
+    td.innerHTML = val;
+    newTr.appendChild(td);  
+}
+
+function sumPaymentTotal(value)
+{   
+    const id = paymentId
+    let total = 0;
+    for (let i = 0; i <paymentId; i++)
+    {
+        const key =  'payment' + (i+1);
+        total +=parseFloat(allPayments[key][value]);
+    }
+    return total;
+     
+}*/
