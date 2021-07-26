@@ -1,7 +1,7 @@
 describe("Payments test", function() {
     beforeEach(function () {
-        billAmtInput.value = 200;
-        tipAmtInput.value = 20;
+        billAmt.value = 200;
+        tipAmt.value = 20;
 
       });
     it('should add a new payment to allPayments on submitPaymentInfo()', function () {
